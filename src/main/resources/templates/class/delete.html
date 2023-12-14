@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Class</title>
+</head>
+<body>
+    <h2>Delete Class</h2>
+    <p>Are you sure you want to delete the class with ID <span th:text="${classe.id}"></span>?</p>
+    <form th:action="@{/classes/delete/{id}(id=${classe.id})}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+    <a href="/classes">Cancel</a>
+</body>
+</html>

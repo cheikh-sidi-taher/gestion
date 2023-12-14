@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Class List</title>
+</head>
+<body>
+    <h2>Class List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="classe : ${classes}">
+                <td th:text="${classe.id}"></td>
+                <td th:text="${classe.name}"></td>
+                <td th:text="${classe.year}"></td>
+                <td>
+                    <a th:href="@{/classes/{id}(id=${classe.id})}">View</a>
+                    |
+                    <a th:href="@{/classes/delete/{id}(id=${classe.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/classes/new">Create New Class</a>
+</body>
+</html>
